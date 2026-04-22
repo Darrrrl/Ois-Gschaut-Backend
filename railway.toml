@@ -1,6 +1,8 @@
 [build]
 builder = "nixpacks"
-buildCommand = "dotnet publish OisGschaut.API/OisGschaut.API.csproj -c Release -o out"
 
 [deploy]
 startCommand = "dotnet out/OisGschaut.API.dll"
+
+[nixpacks]
+buildCommand = "cd OisGschaut.API && dotnet publish OisGschaut.API.csproj -c Release -o ../out"
